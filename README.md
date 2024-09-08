@@ -4,7 +4,7 @@ Portfolio site built using Vite + React
 
 ## Authors
 
-**Sasha Morton-Salmon** - [GitHub Profile](https://github.com/clone-101)Sasha Morton-Salmon
+**Sasha Morton-Salmon** - [GitHub Profile](https://github.com/clone-101)
 
 ## License
 
