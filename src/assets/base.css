@@ -1,0 +1,26 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --shadow-grey: #212529;
+  --gunmetal: #343a40;
+  --iron-grey: #495057;
+  --slate-grey: #6c757d;
+  --pale-slate: #adb5bd;
+  --alabaster-grey: #dee2e6;
+  --platinum: #e9ecef;
+  --bright-snow: #f8f9fa;
+
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--bright-snow);
+  --color-background-container: var(--bright-snow);
+  --color-border: var(--gunmetal);
+
+  --color-heading: var(--shadow-grey);
+  --color-text: var(--shadow-grey);
+
+  --section-gap: 160px;
+}
+
+
