@@ -1,0 +1,32 @@
+@import './base.css';
+@import './fonts.css';
+
+#app {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Jakob", serif;
+  color: var(--color-heading);
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-family: "GravePresse", serif;
+  font-size: 3rem;
+  color: var(--color-heading);
+  /* text-align: center; */
+}
+
+h3 {
+  font-family: "Jakob", serif;
+  font-size: 2rem;
+  color: var(--color-heading);
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--iron-grey);
+  }
+}
