@@ -72,6 +72,7 @@ defineProps({
   }
   
   .hero-image {
+    justify-self: center;
     margin-bottom: 1rem;
   }
 }
