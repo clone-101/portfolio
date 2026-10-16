@@ -4,7 +4,7 @@
 
 ## Overview
 
-This is a simple I am using to learn more about frontend frameworks and display my qualifications.
+This is a simple site I am using to learn more about frontend frameworks and display my qualifications.
 
 Stay tuned for:
 
