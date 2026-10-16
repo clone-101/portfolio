@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const siteContent = ref(null)
 const landingBg = ref(null)
+const publicAsset = (name) => `${import.meta.env.BASE_URL}${name}`
 
 onMounted(() => {
   gsap.set(siteContent.value, { y: '100vh' })
@@ -45,8 +46,8 @@ onMounted(() => {
   <div class="page-wrapper">
     <div class="landing-background" ref="landingBg">
       <div class="landing-image-wrapper">
-        <img src="/larry-mono.png" class="landing-image landing-image-base" />
-        <img src="/larry.png" class="landing-image landing-image-alt" />
+        <img :src="publicAsset('larry-mono.png')" class="landing-image landing-image-base" />
+        <img :src="publicAsset('larry.png')" class="landing-image landing-image-alt" />
       </div>
     </div>
 
@@ -54,9 +55,9 @@ onMounted(() => {
       <div class="app">
           <main class="main">
             <Hero
-              image="/headshot.JPG"
+              :image="publicAsset('headshot.png')"
               title="Sasha Morton‑Salmon"
-              text="Welcome to my portfolio. I'm a developer passionate about creating amazing web experiences."
+              text="Welcome to my portfolio. I'm a developer passionate about creating useful software!"
             />
             <div class="section-stack">
               <ResumeSection />

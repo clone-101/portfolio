@@ -1,7 +1,7 @@
 <template>
   <footer class="footer-section">
     <div class="footer-item footer-logo">
-      <img src="/smile.png" alt="Logo" />
+      <img :src="smileImage" alt="Logo" />
     </div>
     <div class="footer-item footer-copy">
       <p>© {{ new Date().getFullYear() }} Sasha Morton-Salmon. All rights reserved.</p>
@@ -19,6 +19,10 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import smileImage from "@/assets/smile.png";
+</script>
 
 <style scoped>
 .footer-section {
