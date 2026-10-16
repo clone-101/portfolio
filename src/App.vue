@@ -10,30 +10,18 @@ import FooterSection from './components/FooterSection.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const siteContent = ref(null)
+const appEl = ref(null)
 const landingBg = ref(null)
 const publicAsset = (name) => `${import.meta.env.BASE_URL}${name}`
 
 onMounted(() => {
-  gsap.set(siteContent.value, { y: '100vh' })
-
-  gsap.to(siteContent.value, {
-    y: '0vh',
-    ease: 'none',
-    scrollTrigger: {
-      trigger: siteContent.value,
-      start: 'top bottom',
-      end: 'top top',
-      scrub: true
-    }
-  })
-
+  // Content scrolls natively (spacer above it), so only the blur is scrubbed
   gsap.to(landingBg.value, {
     filter: 'blur(12px)',
     scale: 1.02,
     ease: 'none',
     scrollTrigger: {
-      trigger: siteContent.value,
+      trigger: appEl.value,
       start: 'top bottom',
       end: 'top top',
       scrub: true
@@ -51,8 +39,8 @@ onMounted(() => {
       </div>
     </div>
 
-    <div ref="siteContent" class="site-content">
-      <div class="app">
+    <div class="site-content">
+      <div ref="appEl" class="app">
           <main class="main">
             <Hero
               :image="publicAsset('headshot.png')"
@@ -87,8 +75,16 @@ onMounted(() => {
   justify-content: center;
   background-color: var(--color-background);
   z-index: 0;
-  transition: transform 0.4s, filter 0.4s;
+  will-change: filter, transform;
   pointer-events: none;
+}
+
+/* Spacer reveals the landing image; content then scrolls up over it natively */
+.site-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100vh;
+  pointer-events: none; /* let hover reach the landing image through the spacer */
 }
 
 .landing-image-wrapper {
@@ -119,6 +115,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   background: transparent;
+  pointer-events: auto;
 }
 
 .main {
